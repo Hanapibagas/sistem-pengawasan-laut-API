@@ -46,7 +46,7 @@ class KabKotaController extends Controller
 
     public function show($id)
     {
-        $data = KabupatenKota::where('id', '=', $id)->get();
+        $data = KabupatenKota::where('id', '=', $id)->first();
 
         if ($data) {
             return ApiFormatter::createApi(200, 'success', $data);

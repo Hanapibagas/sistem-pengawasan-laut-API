@@ -12,4 +12,9 @@ class KabupatenKota extends Model
     protected $fillable = [
         'kabupaten_kota'
     ];
+
+    public function biota_laut()
+    {
+        return $this->belongsTo(BiotaLaut::class, 'kabupaten_kota_id', 'id');
+    }
 }

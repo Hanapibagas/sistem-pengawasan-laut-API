@@ -16,7 +16,6 @@ class BiotaLaut extends Model
         'longtitude',
         'deskripsi',
         'jumlah_populasi',
-        'gambar',
     ];
 
     public function kabupaten_kota()
@@ -27,5 +26,10 @@ class BiotaLaut extends Model
     public function jenis_biota_laut()
     {
         return $this->belongsTo(JenisBiotaLaut::class, 'jenis_biota_laut_id', 'id');
+    }
+
+    public function image_details()
+    {
+        return $this->hasMany(ImageDetail::class, 'biota_laut_id', 'id');
     }
 }

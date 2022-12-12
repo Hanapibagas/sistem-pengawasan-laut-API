@@ -21,7 +21,6 @@ class CreateBiotaLautsTable extends Migration
             $table->string('longtitude');
             $table->longText('deskripsi');
             $table->string('jumlah_populasi');
-            $table->string('gambar');
             $table->timestamps();
         });
     }

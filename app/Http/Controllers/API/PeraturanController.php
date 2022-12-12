@@ -52,7 +52,7 @@ class PeraturanController extends Controller
 
     public function show($id)
     {
-        $data = Peraturan::where('id', '=', $id)->get();
+        $data = Peraturan::where('id', '=', $id)->first();
 
         if ($data) {
             return ApiFormatter::createApi(200, 'success', $data);
