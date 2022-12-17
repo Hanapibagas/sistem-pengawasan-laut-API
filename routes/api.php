@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BiotaKabupatenController;
 use App\Http\Controllers\API\BiotaLautController;
+use App\Http\Controllers\API\GeoJenisController;
 use App\Http\Controllers\API\ImageController;
 use App\Http\Controllers\API\JenisBiotaLautController;
 use App\Http\Controllers\API\KabKotaController;
@@ -51,6 +52,9 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     // kabupaten
     Route::get('biota/kabupaten/{id}', [BiotaKabupatenController::class, 'show']);
+
+    // gepjenis
+    Route::get('geo-jenis/{id}', [GeoJenisController::class, 'show']);
 });
 // route user
 Route::post('register', [UserController::class, 'register']);

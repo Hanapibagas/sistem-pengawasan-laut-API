@@ -38,7 +38,7 @@ class UserController extends Controller
         }
 
         $credentials = $request->only('email', 'password');
-        if (!$token = auth()->attempt($credentials)) {
+        if (!$token = auth()->guard("api")->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
         $data['token'] = $token;
@@ -47,7 +47,7 @@ class UserController extends Controller
 
         return response()->json([
             'user' => $data,
-            'expires' => auth()->factory()->getTTL()
+            'expires' => auth()->guard("api")->factory()->getTTL()
         ], 200);
     }
 
@@ -64,7 +64,7 @@ class UserController extends Controller
             return response()->json($validator->messages());
         }
 
-        User::create([
+        $data = User::create([
             'name' => request('name'),
             'email' => request('email'),
             'password' => bcrypt($request->password),
@@ -73,12 +73,12 @@ class UserController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        $token = auth()->attempt($credentials);
+        $token = Auth::guard("api")->attempt($credentials);
 
-        return (new UserResource($request->user()))
-            ->additional(['meta' => [
-                'token' => $token,
-            ]]);
+        return response()->json([
+            "user" => $data,
+            "token" => $token
+        ]);
     }
 
     public function user()
