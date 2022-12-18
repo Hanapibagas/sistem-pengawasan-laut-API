@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class GeoJenisController extends Controller
 {
-    public function index()
+    public function show($id)
     {
-        $data = GeoJenis::where(['nama_geo']);
+        $data = GeoJenis::where('jenis_id', '=', $id)->get();
 
         // foreach ($data as $value) {
         //     $value['deskripsi'] =  env('APP_URL') . '/storage/' . $data->deskripsi;
