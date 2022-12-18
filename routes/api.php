@@ -54,7 +54,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('biota/kabupaten/{id}', [BiotaKabupatenController::class, 'show']);
 
     // gepjenis
-    Route::get('geo-jenis/{id}', [GeoJenisController::class, 'show']);
+    Route::get('geo-jenis/searech', [GeoJenisController::class, 'index']);
 });
 // route user
 Route::post('register', [UserController::class, 'register']);

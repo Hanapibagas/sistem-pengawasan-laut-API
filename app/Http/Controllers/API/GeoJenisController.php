@@ -9,13 +9,13 @@ use Illuminate\Http\Request;
 
 class GeoJenisController extends Controller
 {
-    public function show($id)
+    public function index()
     {
-        $data = GeoJenis::where('id', '=', $id)->first();
+        $data = GeoJenis::where(['nama_geo']);
 
-        if ($data->deskripsi) {
-            $data['deskripsi'] =  env('APP_URL') . '/storage/' . $data->deskripsi;
-        }
+        // foreach ($data as $value) {
+        //     $value['deskripsi'] =  env('APP_URL') . '/storage/' . $data->deskripsi;
+        // }
 
         if ($data) {
             return ApiFormatter::createApi(200, 'success', $data);
