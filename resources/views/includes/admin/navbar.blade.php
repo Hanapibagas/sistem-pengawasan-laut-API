@@ -1,8 +1,8 @@
 <div class="header">
     <div class="logo logo-dark">
         <a href="index.html">
-            <img src="{{ asset('admin/images/logo/download-removebg-preview.png') }}" style="width: 110px; margin-top: 10px" alt="Logo">
-            <img class="logo-fold" src="{{ asset('admin/images/logo/download-removebg-preview.png') }}"  style="width: 70px; margin-top: 10px; margin-left: 5px" alt="Logo">
+            <img src="{{ asset('admin/images/logo/1.jpeg') }}" style="width: 110px; margin-top: -5px" alt="Logo">
+            {{-- <img class="logo-fold" src="{{ asset('admin/images/logo/download-removebg-preview.png') }}"  style="width: 70px; margin-top: 10px; margin-left: 5px" alt="Logo"> --}}
         </a>
     </div>
     <div class="logo logo-white">
