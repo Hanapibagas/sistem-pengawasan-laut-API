@@ -7,6 +7,7 @@
     <title>Admin | Tata ruang laut</title>
 
     <link rel="shortcut icon" href="{{ asset('admin/images/logo/favicon.png') }}">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="{{ asset('admin/css/app.min.css') }}" rel="stylesheet">
 
 </head>
@@ -201,6 +202,7 @@
 
 
     <!-- Core Vendors JS -->
+
     <script src="{{ asset('admin/js/vendors.min.js') }}"></script>
 
     <!-- page js -->
@@ -209,6 +211,7 @@
 
     <!-- Core JS -->
     <script src="{{ asset('admin/js/app.min.js') }}"></script>
+
 </body>
 
 

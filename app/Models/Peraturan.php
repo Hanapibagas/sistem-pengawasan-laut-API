@@ -10,9 +10,7 @@ class Peraturan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul',
-        'menimbang',
-        'mengingat',
-        'deskripsi',
+        'nama_peraturan',
+        'peraturan',
     ];
 }

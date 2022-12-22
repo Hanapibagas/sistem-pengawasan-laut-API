@@ -15,10 +15,8 @@ class CreatePeraturansTable extends Migration
     {
         Schema::create('peraturans', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('menimbang');
-            $table->string('mengingat');
-            $table->longText('deskripsi');
+            $table->string('nama_peraturan');
+            $table->text('peraturan');
             $table->timestamps();
         });
     }

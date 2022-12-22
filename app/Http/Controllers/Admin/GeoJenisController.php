@@ -69,8 +69,8 @@ class GeoJenisController extends Controller
             }
         }
 
-        if ($request->file('deskripsi')) {
-            $file = $request->file('deskripsi')->store('JenisGeo', 'public');
+        if ($request->file('deskripsi') === null) {
+            $file = $geojenis->file('deskripsi');
         }
 
         $geojenis->update([

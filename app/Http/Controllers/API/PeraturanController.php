@@ -54,6 +54,10 @@ class PeraturanController extends Controller
     {
         $data = Peraturan::where('id', '=', $id)->first();
 
+        if ($data->peraturan) {
+            $data['peraturan'] =  env('APP_URL') . '/storage/' . $data->peraturan;
+        }
+
         if ($data) {
             return ApiFormatter::createApi(200, 'success', $data);
         } else {

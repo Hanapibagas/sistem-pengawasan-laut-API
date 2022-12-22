@@ -5,7 +5,7 @@
 <div class="main-content">
     <div class="card">
         <div class="card-body">
-            <h4>Create about</h4>
+            <h4>Update jenis</h4>
                 <form action="{{ route('jenis.update', $jenis->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

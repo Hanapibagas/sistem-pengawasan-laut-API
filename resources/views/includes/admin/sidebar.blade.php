@@ -20,9 +20,17 @@
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="{{ route('jenis-geo.index') }}">
                     <span class="icon-holder">
-                        <i class="anticon anticon-appstore"></i>
+                        <i class="anticon anticon-build"></i>
                     </span>
                     <span class="title">Geo Jenis</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="{{ route('praturan.index') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-file"></i>
+                    </span>
+                    <span class="title">Praturan</span>
                 </a>
             </li>
         </ul>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\GeoJenisController;
 use App\Http\Controllers\Admin\JenisController;
+use App\Http\Controllers\Admin\PraturanController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,7 @@ Route::prefix('/dashboard')->group(function () {
 
     Route::resource('jenis-geo', GeoJenisController::class);
     Route::resource('jenis', JenisController::class);
+    Route::resource('praturan', PraturanController::class);
 });
 
 // Route::middleware('auth')->group(function () {
