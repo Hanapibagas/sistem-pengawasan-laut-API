@@ -63,6 +63,21 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="media align-items-center">
+                        <div class="avatar avatar-icon avatar-lg avatar-blue">
+                            <i class="anticon anticon-hdd"></i>
+                        </div>
+                        <div class="m-l-15">
+                            <h2 class="m-b-0">{{ $dataterumbukarang }}</h2>
+                            <p class="m-b-0 text-muted">Data Terumbu Ksarang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

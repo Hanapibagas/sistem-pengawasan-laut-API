@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BiotaKabupatenController;
 use App\Http\Controllers\API\BiotaLautController;
 use App\Http\Controllers\API\DataPenanamanMangroveController;
+use App\Http\Controllers\API\DataSebarTerumbuKarangController;
 use App\Http\Controllers\API\GeoJenisController;
 use App\Http\Controllers\API\ImageController;
 use App\Http\Controllers\API\JenisBiotaLautController;
@@ -60,6 +61,9 @@ Route::group(['middleware' => ['auth:api']], function () {
     // data mangrove
     Route::get('data-mangrove/{id}', [DataPenanamanMangroveController::class, 'show']);
     Route::get('tahun-penananman-mangrove/{id}', [DataPenanamanMangroveController::class, 'tahun']);
+
+    // data sebar terumbukarang
+    Route::get('data-sebar-terumbu-karang', [DataSebarTerumbuKarangController::class, 'index']);
 });
 // route user
 Route::post('register', [UserController::class, 'register']);

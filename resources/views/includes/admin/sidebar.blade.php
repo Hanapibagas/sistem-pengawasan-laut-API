@@ -52,6 +52,15 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="{{ route('data-sebaran-terumbu-karang.index') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-hdd"></i>
+                    </span>
+                    <span class="title">Data Sebaran </span><br>
+                    <span style="margin-left: 42px">Terumbu Karang</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

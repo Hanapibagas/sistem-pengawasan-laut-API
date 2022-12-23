@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DataPenanamanMangroveController;
+use App\Http\Controllers\Admin\DataSebaranTerumbuKarangController;
 use App\Http\Controllers\Admin\GeoJenisController;
 use App\Http\Controllers\Admin\JenisController;
 use App\Http\Controllers\Admin\PraturanController;
@@ -46,6 +47,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('praturan', PraturanController::class);
     Route::resource('tahun-penanaman', TahunController::class);
     Route::resource('data-penanaman', DataPenanamanMangroveController::class);
+    Route::resource('data-sebaran-terumbu-karang', DataSebaranTerumbuKarangController::class);
 });
 
 // Route::middleware('auth')->group(function () {
