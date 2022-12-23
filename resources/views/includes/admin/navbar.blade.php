@@ -1,14 +1,14 @@
 <div class="header">
     <div class="logo logo-dark">
         <a href="index.html">
-            <img src="{{ asset('admin/images/logo/1.jpeg') }}" style="width: 110px; margin-top: -5px" alt="Logo">
+            <img src="{{ asset('admin/images/logo/1-removebg-preview.png') }}" style="width: 110px; margin-top: -5px" alt="Logo">
             {{-- <img class="logo-fold" src="{{ asset('admin/images/logo/download-removebg-preview.png') }}"  style="width: 70px; margin-top: 10px; margin-left: 5px" alt="Logo"> --}}
         </a>
     </div>
     <div class="logo logo-white">
         <a href="index.html">
-            <img src="assets/images/logo/logo-white.png" alt="Logo">
-            <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+            <img src="{{ asset('admin/images/logo/1-removebg-preview.png') }}" style="width: 110px; margin-top: -5px" alt="Logo">
+            {{-- <img class="logo-fold" src="{{ asset('admin/images/logo/1.jpeg') }}" alt="Logo"> --}}
         </a>
     </div>
     <div class="nav-wrap">
