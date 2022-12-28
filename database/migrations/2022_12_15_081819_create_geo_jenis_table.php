@@ -17,7 +17,10 @@ class CreateGeoJenisTable extends Migration
             $table->id();
             $table->bigInteger('jenis_id');
             $table->string('nama_geo');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
+            $table->longText('di_perbolehkan')->nullable();
+            $table->longText('tidak_diperbolehkan')->nullable();
+            $table->longText('diperbolehkan_bersyarat')->nullable();
             $table->timestamps();
         });
     }

@@ -27,18 +27,24 @@ class GeoJenisController extends Controller
     {
         $this->validate($request, [
             'jenis_id' => 'required',
-            'nama_geo' => 'required',
-            'deskripsi' => 'required'
+            'nama_geo' => 'required'
         ]);
 
         if ($request->file('deskripsi')) {
             $file = $request->file('deskripsi')->store('JenisGeo', 'public');
         }
 
+        if ($request->file('deskripsi') === null) {
+            $file = $request->deskripsi;
+        }
+
         GeoJenis::create([
             "jenis_id" => $request->input('jenis_id'),
             "nama_geo" => $request->input('nama_geo'),
-            "deskripsi" => $file
+            "deskripsi" => $file,
+            "di_perbolehkan" => $request->input('di_perbolehkan'),
+            "tidak_diperbolehkan" => $request->input('tidak_diperbolehkan'),
+            "diperbolehkan_bersyarat" => $request->input('diperbolehkan_bersyarat'),
         ]);
 
         return redirect()->route('jenis-geo.index');
@@ -62,7 +68,7 @@ class GeoJenisController extends Controller
         $geojenis = GeoJenis::where('id', $id)->first();
 
         if ($request->file('deskripsi')) {
-            $file = $request->file('deskripsi')->store('gambar', 'public');
+            $file = $request->file('deskripsi')->store('JenisGeo', 'public');
             if ($geojenis->deskripsi && file_exists(storage_path('app/public/' . $geojenis->deskripsi))) {
                 Storage::delete('public/' . $geojenis->deskripsi);
                 $file = $request->file('deskripsi')->store('JenisGeo', 'public');
@@ -70,13 +76,16 @@ class GeoJenisController extends Controller
         }
 
         if ($request->file('deskripsi') === null) {
-            $file = $geojenis->file('deskripsi');
+            $file = $geojenis->deskripsi;
         }
 
         $geojenis->update([
             "jenis_id" => $request->input('jenis_id'),
             "nama_geo" => $request->input('nama_geo'),
-            "deskripsi" => $file
+            "deskripsi" => $file,
+            "di_perbolehkan" => $request->input('di_perbolehkan'),
+            "tidak_diperbolehkan" => $request->input('tidak_diperbolehkan'),
+            "diperbolehkan_bersyarat" => $request->input('diperbolehkan_bersyarat'),
         ]);
 
         return redirect()->route('jenis-geo.index');

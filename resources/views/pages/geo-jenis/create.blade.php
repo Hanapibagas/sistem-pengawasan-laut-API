@@ -24,8 +24,20 @@
                         <input name="nama_geo" type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Geo">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Deskripsi</label>
+                        <label for="formGroupExampleInput">Peta</label>
                         <input name="deskripsi" type="file" class="form-control" id="formGroupExampleInput" placeholder="Jenis">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Diperbolehkan</label>
+                        <textarea name="di_perbolehkan" type="text" class="block w-full" placeholder="Silahkan isi pemanfaatan ruang"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Tidak Diperbolehkan  </label>
+                        <textarea name="tidak_diperbolehkan" type="text" class="block w-full" placeholder="Silahkan isi pemanfaatan ruang"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Diperbolehkan Degan Syarat</label>
+                        <textarea name="diperbolehkan_bersyarat" type="text" class="block w-full" placeholder="Silahkan isi pemanfaatan ruang"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">
                         Kirim
@@ -35,3 +47,12 @@
     </div>
 </div>
 @endsection
+
+@push('add-script')
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('di_perbolehkan');
+        CKEDITOR.replace('tidak_diperbolehkan');
+        CKEDITOR.replace('diperbolehkan_bersyarat');
+    </script>
+@endpush

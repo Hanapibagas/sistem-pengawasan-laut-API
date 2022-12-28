@@ -10,7 +10,7 @@ class GeoJenis extends Model
     use HasFactory;
 
     protected $fillable = [
-        'jenis_id', 'deskripsi', 'nama_geo'
+        'jenis_id', 'deskripsi', 'nama_geo', 'di_perbolehkan', 'tidak_diperbolehkan', 'diperbolehkan_bersyarat'
     ];
 
     public function Jenis()
