@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\GeoJenisController;
 use App\Http\Controllers\Admin\JenisController;
 use App\Http\Controllers\Admin\PraturanController;
 use App\Http\Controllers\Admin\TahunController;
+use App\Http\Controllers\Admin\TambahPenggunaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,19 +26,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// Route::get('/', [HomeController::class, 'Welcome']);
-
-// Route::prefix('/')->middleware(['auth', 'admin'])->group(function () {
-//     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
-// });
-
 Route::get('/', function () {
     return view("auth.login");
 });
-
-// Route::get('/test', function () {
-//     return "ok";
-// })->middleware("auth");
 
 Route::prefix('/dashboard')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
@@ -48,8 +39,10 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('tahun-penanaman', TahunController::class);
     Route::resource('data-penanaman', DataPenanamanMangroveController::class);
     Route::resource('data-sebaran-terumbu-karang', DataSebaranTerumbuKarangController::class);
-});
 
-// Route::middleware('auth')->group(function () {
-// Route::get('/home', [HomeController::class, 'index'])->middleware("auth");
-// });
+    // tambah pengguna
+    Route::get('tambah-pengguna', [TambahPenggunaController::class, 'index'])->name('tambah-pengguna-index');
+    Route::get('tambah-pengguna/create', [TambahPenggunaController::class, 'create'])->name('tambah-pengguna-create');
+    Route::post('tambah-pengguna/post', [TambahPenggunaController::class, 'register'])->name('tambah-pengguna-register');
+    Route::delete('tambah-pengguna/hapus/{id}', [TambahPenggunaController::class, 'delete'])->name('tambah-pengguna-delete');
+});

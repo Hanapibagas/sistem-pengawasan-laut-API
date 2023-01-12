@@ -123,7 +123,6 @@ class BiotaLautController extends Controller
                 }
             }
 
-
             $data = BiotaLaut::where('id', '=', $biotalaut->id)->get();
 
             if ($data) {

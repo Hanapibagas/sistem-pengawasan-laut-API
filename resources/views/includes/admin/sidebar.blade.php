@@ -61,6 +61,14 @@
                     <span style="margin-left: 42px">Terumbu Karang</span>
                 </a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="{{ route('tambah-pengguna-index') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-user"></i>
+                    </span>
+                    <span class="title">Tambah Pengguna</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
