@@ -38,22 +38,10 @@
         </div>
     </div>
 
-{{--
-    <!-- Core Vendors JS -->
-
-    <script src="{{ asset('admin/js/vendors.min.js') }}"></script>
-
-    <!-- page js -->
-    <script src="{{ asset('admin/vendors/chartjs/Chart.min.js') }}"></script>
-    <script src="{{ asset('admin/js/pages/dashboard-default.js') }}"></script> --}}
-
-
     <script src="{{ asset('admin/js/app.min.js') }}"></script>
 
     @stack('add-script')
 
 </body>
 
-
-<!-- Mirrored from www.themenate.net/enlink-bs/dist/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 07:08:06 GMT -->
 </html>

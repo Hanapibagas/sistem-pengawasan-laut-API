@@ -21,6 +21,7 @@
                                 <th>Baik</th>
                                 <th>Sedang</th>
                                 <th>Rusak</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,6 +32,12 @@
                                 <th>{{ $file->kondisi_baik }}</th>
                                 <th>{{ $file->kondisi_sedang }}</th>
                                 <th>{{ $file->kondisi_rusak }}</th>
+                                <th>
+                                    <a href="{{ route('data-sebaran-terumbu-karang.edit', $file->id) }}"
+                                        class="btn btn-info">
+                                        <i class="fa fa-pencil-alt"></i>
+                                    </a>
+                                </th>
                             </tr>
                             @empty
                             <tr>

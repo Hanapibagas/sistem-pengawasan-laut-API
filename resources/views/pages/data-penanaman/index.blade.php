@@ -21,6 +21,7 @@
                                 <th scope="col">Daerah</th>
                                 <th scope="col">Kabupaten</th>
                                 <th scope="col">Jumlah Batang</th>
+                                <th scope="col">Akasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,7 +30,12 @@
                                 <th>{{ $file->TahunPenanaman->tahun }}</th>
                                 <th>{{ $file->daerah }}</th>
                                 <th>{{ $file->kabupaten }}</th>
-                                <th>{{ $file->jumlah_batang	 }}</th>
+                                <th>{{ $file->jumlah_batang }}</th>
+                                <th>
+                                    <a href="{{ route('data-penanaman.edit', $file->id) }}" class="btn btn-info">
+                                        <i class="fa fa-pencil-alt"></i>
+                                    </a>
+                                </th>
                             </tr>
                             @empty
                             <tr>

@@ -61,6 +61,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     // data mangrove
     Route::get('data-mangrove/{id}', [DataPenanamanMangroveController::class, 'show']);
     Route::get('tahun-penananman-mangrove/{id}', [DataPenanamanMangroveController::class, 'tahun']);
+    Route::get('tahun-penananman-mangrove', [DataPenanamanMangroveController::class, 'rekap']);
 
     // data sebar terumbukarang
     Route::get('data-sebar-terumbu-karang', [DataSebarTerumbuKarangController::class, 'index']);

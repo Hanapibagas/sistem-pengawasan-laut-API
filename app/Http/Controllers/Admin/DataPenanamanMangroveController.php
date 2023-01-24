@@ -31,4 +31,20 @@ class DataPenanamanMangroveController extends Controller
 
         return redirect()->route('data-penanaman.index');
     }
+
+    public function edit($id)
+    {
+        $datapenanaman = DataPenanaman::with(['TahunPenanaman'])->findOrFail($id);
+
+        return view('pages.data-penanaman.update', compact('datapenanaman'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $datapenanaman = $request->all();
+        $items = DataPenanaman::where('id', $id)->first();
+
+        $items->update($datapenanaman);
+        return redirect()->route('data-penanaman.index');
+    }
 }
